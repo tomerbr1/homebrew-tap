@@ -5,24 +5,24 @@ Personal Homebrew tap for macOS tools.
 ## Install
 
 ```bash
-brew install --cask tomerbr1/tap/slack-presence
+brew install --cask tomerbr1/tap/presently
 ```
 
 ## Available Casks
 
 | Cask | Version | Description |
 |------|---------|-------------|
-| slack-presence | 1.8 | macOS menu bar app for automatic Slack presence management |
+| presently | 2.0.0 | macOS menu bar app for automatic Slack presence management |
 
 ---
 
 ## Maintenance
 
-### Releasing a new version of SlackPresence
+### Releasing a new version of Presently
 
 #### 1. Build the app
 
-Open `SlackPresence.xcodeproj` in Xcode, bump the version in project settings (`MARKETING_VERSION` and `CURRENT_PROJECT_VERSION`), then:
+Open `Presently.xcodeproj` in Xcode, bump the version in project settings (`MARKETING_VERSION` and `CURRENT_PROJECT_VERSION`), then:
 
 - Product -> Archive
 - In the Organizer window, select the archive
@@ -33,15 +33,15 @@ Open `SlackPresence.xcodeproj` in Xcode, bump the version in project settings (`
 
 ```bash
 cd /path/to/exported/app
-zip -r SlackPresence-v<VERSION>.zip SlackPresence.app
+zip -r Presently-v<VERSION>.zip Presently.app
 ```
 
 #### 3. Create the GitHub release
 
 ```bash
-gh release create v<VERSION> SlackPresence-v<VERSION>.zip \
-  --repo tomerbr1/slack-presence \
-  --title "SlackPresence v<VERSION>" \
+gh release create v<VERSION> Presently-v<VERSION>.zip \
+  --repo tomerbr1/presently \
+  --title "Presently v<VERSION>" \
   --notes "Release notes here"
 ```
 
@@ -50,13 +50,13 @@ gh release create v<VERSION> SlackPresence-v<VERSION>.zip \
 Get the SHA256 of the zip:
 
 ```bash
-shasum -a 256 SlackPresence-v<VERSION>.zip
+shasum -a 256 Presently-v<VERSION>.zip
 ```
 
-Edit `Casks/slack-presence.rb` - update `version` and `sha256`:
+Edit `Casks/presently.rb` - update `version` and `sha256`:
 
 ```ruby
-cask "slack-presence" do
+cask "presently" do
   version "<VERSION>"
   sha256 "<SHA256>"
   # ... rest stays the same
@@ -67,8 +67,8 @@ Commit and push:
 
 ```bash
 cd /path/to/homebrew-tap
-git add Casks/slack-presence.rb
-git commit -m "Update slack-presence to v<VERSION>"
+git add Casks/presently.rb
+git commit -m "Update presently to v<VERSION>"
 git push
 ```
 
@@ -76,7 +76,7 @@ git push
 
 ```bash
 brew update
-brew upgrade --cask slack-presence
+brew upgrade --cask presently
 ```
 
 ### Quick reference
@@ -84,8 +84,8 @@ brew upgrade --cask slack-presence
 | Step | Command |
 |------|---------|
 | Build | Xcode -> Archive -> Distribute -> Copy App |
-| Zip | `zip -r SlackPresence-v<VER>.zip SlackPresence.app` |
-| Release | `gh release create v<VER> SlackPresence-v<VER>.zip --repo tomerbr1/slack-presence` |
-| SHA | `shasum -a 256 SlackPresence-v<VER>.zip` |
-| Update cask | Edit `Casks/slack-presence.rb` (version + sha256) |
-| Verify | `brew update && brew upgrade --cask slack-presence` |
+| Zip | `zip -r Presently-v<VER>.zip Presently.app` |
+| Release | `gh release create v<VER> Presently-v<VER>.zip --repo tomerbr1/presently` |
+| SHA | `shasum -a 256 Presently-v<VER>.zip` |
+| Update cask | Edit `Casks/presently.rb` (version + sha256) |
+| Verify | `brew update && brew upgrade --cask presently` |
