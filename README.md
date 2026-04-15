@@ -12,7 +12,7 @@ brew install --cask tomerbr1/tap/presently
 
 | Cask | Version | Description |
 |------|---------|-------------|
-| presently | 2.0.0 | macOS menu bar app for automatic Slack presence management |
+| presently | 2.0.1 | macOS menu bar app for automatic Slack presence management |
 
 ---
 

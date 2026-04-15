@@ -1,6 +1,6 @@
 cask "presently" do
-  version "2.0.0"
-  sha256 "11202b684fe0fc4a1b113a43e8a86f17142747ad031c0252dd34c0fbcc154d71"
+  version "2.0.1"
+  sha256 "376818b87e570343ce30fbb72386aa3678949f3498a0d817870d412857d0c7ae"
 
   url "https://github.com/tomerbr1/presently/releases/download/v#{version}/Presently-v#{version}.zip"
   name "Presently"
